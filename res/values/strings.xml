@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">Hello World, CommonProjectActivity!</string>
+    <string name="app_name">CommonProject</string>
+    <string name="exit">Kill</string>
+    <string name="finish">Finish</string>
+    <string name="exitText">It will kill the activity, you can check it by checking the task manager after clicking Kill</string>
+    <string name="finishText">It will only Finish the activity</string>
+</resources>
