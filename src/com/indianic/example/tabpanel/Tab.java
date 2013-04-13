@@ -21,26 +21,38 @@ public class Tab {
 	private Intent intent;
 
 	private View view;
+	// what's this button?
 	private Button btn;
+	// name?
 	private final String tabTag;
 
+	// what's this?
 	public int preferedHeight = -1;
 	private boolean isSelected;
+	// tab need a dialog?
 	private Dialog dialog;
+	// request code?
 	private int requestCode = -1;
+	// tab button text?
 	private String btnText;
+	// button text color?
 	private int textColor;
+	// button text color?
 	private int selectedTextColor;
 //	private int btnColor;
 //	private int selectedBtnColor;
+	// what's gradient?
 	private GradientDrawable btnGradient;
 	private GradientDrawable selectedBtnGradient;
+	// tab button text size?
 	private float btnTextSize;
 
+	// init tab with activity instance and tag
 	public Tab(Activity context, String tabTag) {
 		if (context == null) {
 			throw new IllegalStateException("Context can't be null");
 		}
+		// tag and category?
 		this.tabTag = tabTag;
 		this.context = context;
 	}
@@ -110,6 +122,7 @@ public class Tab {
 		this.dialog = dialog;
 	}
 	
+	// view? tab need a view?
 	public View getView() {
 		if (view == null) {
 			createView();
@@ -119,6 +132,7 @@ public class Tab {
 	
 	private void createView() 
 	{
+		// inflate button with xml
 		btn = (Button)(context.getLayoutInflater().inflate(R.layout.bizbutton, null));
 
 		int iconId = resourceIcon;
@@ -132,6 +146,7 @@ public class Tab {
 			btnTextColor = selectedTextColor;
 		}
 
+		// init button
 		btn.setCompoundDrawablesWithIntrinsicBounds(0, iconId, 0, 0);
 		btn.setText(btnText);
 		btn.setTextColor(btnTextColor);
@@ -142,9 +157,11 @@ public class Tab {
 		btn.setPadding(0, 15, 0, 0);
 		
 		bindListeners();
+		// view is the button? interesting.
 		view = btn;
 	}
 
+	// bind listener
 	private void bindListeners() {
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View view) {
